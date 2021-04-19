@@ -89,7 +89,7 @@
         <!--Home-->
         <scene sceneID="TGl-Jh-qaJ">
             <objects>
-                <viewController id="Wq3-Ga-c4S" customClass="HomeViewController" customModule="KiddieZone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Wq3-Ga-c4S" customClass="HomeViewController" customModule="KiddieZone" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8vf-wg-NlE" customClass="ho">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,14 +185,49 @@
                         <outlet property="booksBtnOutlet" destination="MuI-pl-flG" id="Bba-XC-FV9"/>
                         <outlet property="lettersBtnOutlet" destination="CcA-MG-dM1" id="SHH-Jd-2ch"/>
                         <segue destination="3gF-AX-YOJ" kind="show" identifier="lettersSegue" id="nKq-o4-Ac0"/>
-                        <segue destination="S9y-ag-Xia" kind="show" identifier="booksSegue" id="8LV-ag-MWw"/>
                         <segue destination="gey-Ib-Qch" kind="show" identifier="numbersSegue" id="gd8-ST-a6t"/>
                         <segue destination="ikL-Gx-pG8" kind="show" identifier="videosSegue" id="aLh-ev-CL7"/>
+                        <segue destination="S9y-ag-Xia" kind="show" identifier="booksSegue" id="d9e-4z-pJg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhW-G2-cGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1747.6923076923076" y="45.497630331753555"/>
+        </scene>
+        <!--Books Table View Controller-->
+        <scene sceneID="jQn-xC-sAa">
+            <objects>
+                <tableViewController id="tSa-5J-KjN" customClass="BooksTableViewController" customModule="KiddieZone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kUX-XQ-MDn">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cmg-Mb-orQ" customClass="BooksTableViewCell" customModule="KiddieZone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cmg-Mb-orQ" id="WPL-h2-v0j">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="pkX-pA-yIS" kind="show" identifier="showLinks" id="hxX-Tb-qPg"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tSa-5J-KjN" id="wXv-Qp-Mui"/>
+                            <outlet property="delegate" destination="tSa-5J-KjN" id="tTA-QH-WNq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="BYp-Lf-UZ6"/>
+                    <connections>
+                        <outlet property="tblView" destination="kUX-XQ-MDn" id="I5U-wZ-f25"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N3g-wO-tYH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2457" y="45"/>
         </scene>
         <!--Books-->
         <scene sceneID="AMn-tg-kr8">
@@ -241,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQH-xQ-o9x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2583.0769230769229" y="44.7867298578199"/>
+            <point key="canvasLocation" x="3208" y="45"/>
         </scene>
         <!--Letters View Controller-->
         <scene sceneID="Jct-zv-oos">
@@ -302,7 +337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NDL-Ah-UoD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3350.7692307692305" y="44.7867298578199"/>
+            <point key="canvasLocation" x="3995" y="63"/>
         </scene>
         <!--Numbers View Controller-->
         <scene sceneID="mLO-t7-4O3">
@@ -363,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9c2-ZJ-XA1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4160" y="44.7867298578199"/>
+            <point key="canvasLocation" x="4792" y="63"/>
         </scene>
         <!--Videos View Controller-->
         <scene sceneID="hAH-4F-lqe">
@@ -413,7 +448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMZ-rU-qFi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4962" y="45"/>
+            <point key="canvasLocation" x="5517" y="63"/>
         </scene>
         <!--Videos View Controller-->
         <scene sceneID="yGv-TZ-ufQ">
@@ -482,7 +517,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TsO-wF-nqQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5680" y="58.293838862559241"/>
+            <point key="canvasLocation" x="6249" y="63"/>
+        </scene>
+        <!--Read Books View Controller-->
+        <scene sceneID="dJf-0Q-P3c">
+            <objects>
+                <viewController id="pkX-pA-yIS" customClass="ReadBooksViewController" customModule="KiddieZone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tG5-Pk-Voz">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4G-5P-Uc5">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zlj-Y5-4r1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g4G-5P-Uc5" firstAttribute="leading" secondItem="zlj-Y5-4r1" secondAttribute="leading" id="8sS-tM-kv0"/>
+                            <constraint firstItem="zlj-Y5-4r1" firstAttribute="trailing" secondItem="g4G-5P-Uc5" secondAttribute="trailing" id="JnO-qA-BSJ"/>
+                            <constraint firstItem="zlj-Y5-4r1" firstAttribute="bottom" secondItem="g4G-5P-Uc5" secondAttribute="bottom" id="zYd-LT-rol"/>
+                            <constraint firstItem="g4G-5P-Uc5" firstAttribute="top" secondItem="zlj-Y5-4r1" secondAttribute="top" id="zkY-ha-HAw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Weu-Xv-SRh"/>
+                    <connections>
+                        <outlet property="webView" destination="g4G-5P-Uc5" id="MJG-S6-Bxw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gl7-1a-tfK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7198" y="68"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0fq-Rh-hyN">

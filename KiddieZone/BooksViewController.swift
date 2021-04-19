@@ -10,6 +10,7 @@ import Alamofire
 import SwiftyJSON
 import PromiseKit
 import WebKit
+import SDWebImage
 
 
 
@@ -17,28 +18,17 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
    
     
     var booksArr: [Books] = [Books]()
-    var webView: WKWebView!
-    
-   
+  
     
     @IBOutlet weak var tblView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tblView.delegate = self
         self.tblView.dataSource = self
-       /* let myURL = URL(string:"https://www.apple.com")
-        let myRequest = URLRequest(url: myURL!)
-        webView.load(myRequest)*/
 
     }
     
-  /*  override func loadView() {
-       let webConfiguration = WKWebViewConfiguration()
-       webView = WKWebView(frame: .zero, configuration: webConfiguration)
-       webView.uiDelegate = self
-       view = webView
-    }
-    */
+  
     override func viewWillAppear(_ animated: Bool) {
           getData();
       }
@@ -58,14 +48,25 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
      
       let cell = Bundle.main.loadNibNamed("BooksTableViewCell", owner: self, options: nil)?.first as! BooksTableViewCell
        
-        // print(booksArr[indexPath.row].id)
+      
         cell.lblTitle.text = "\(booksArr[indexPath.row].title) "
         cell.lblAuthor.text = "\(booksArr[indexPath.row].authors) "
-       // cell.booksImage.image =  UIImage(
-        // cell.booksImage.image = UIImage(named :maxIcon)
+        
+        print(booksArr[indexPath.row].imurl)
+        cell.booksImage.sd_setImage(with: URL(string: booksArr[indexPath.row].imurl), placeholderImage:UIImage(named:"Login"))
+       
         return cell
     }
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+        {
+        
+        let link = booksArr[indexPath.row].url
+        if let url = URL(string: link){
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }  //else you entered an incorrect link
+        }
     
+
     func getUrl() -> String
        {
                   let url = apiURL
@@ -96,7 +97,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                                    let id = eachOne["id"].stringValue
                                   
                                    let title = eachOne["volumeInfo"]["title"].stringValue
-                                  // let author = eachOne["volumeInfo"]["authors"].stringValue
+
                                    let authors = eachOne["volumeInfo"]["authors"].array!
                                    
                                    var author = ""
@@ -114,7 +115,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                                        
                                        self.booksArr.append(Books(id: id, title:  title,authors: author, imurl: imurl, url: url, desc: description))
                                  //  }
-                                  // print(self.booksArr)
+                                  
                                   // self.booksArr.append(Books(id: id, title:  title,authors: author, imurl: imurl, url: url, desc: description))
                                }
 
@@ -123,96 +124,5 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                               
                        }
                    }
-    
-   /* struct WebView : UIViewRepresentable {
-        
-        var url : String
-        
-        func makeUIView(context: UIViewRepresentableContext<WebView>) -> WKWebView {
-            
-            let view = WKWebView()
-            view.load(URLRequest(url: URL(string: url)!))
-            return view
-        }
-        
-        func updateUIView(_ uiView: WKWebView, context: UIViewRepresentableContext<WebView>) {
-            
-            
-        }*/
-    
-                    /*getBooksData(url: url)
-                          .done { (books) in
-                              self.booksArr = [Books]()
-                              for book in books {
-                                  self.booksArr.append(book)
-                              }
-                             
-                              self.tblBooks.reloadData()
-                          }
-                          .catch { (error) in
-                              print("Error in getting all the values \(error)")
-                          }
-                          
-          }
-          
-          func getBooksData(url : String) -> Promise<Books>{
-                      
-                      return Promise<Books> { seal -> Void in
-                          
-                        
-                          AF.request(url).responseJSON { response in
-                          
-                              if response.error == nil {
-                      
-                               var arr: Books = Books(id, title, authors, imurl, url, desc)
-                                  
-                                  guard let data = response.data else {return seal.fulfill( arr ) }
-                                  
-                                  guard let details = JSON(data).array else { return  seal.fulfill( arr ) }
-                                  
-                                  for eachOne in details {
-                                      
-                                      let id = eachOne["id"].stringValue
-                                      let title = eachOne["volumeInfo"]["title"].stringValue
-                                      let author = eachOne["volumeInfo"]["authors"].stringValue
-                                     /* let authors = eachOne["volumeInfo"]["authors"].array!
-                                      var author = ""
-                                      for j in authors{
-                                          
-                                          author += "\(j.stringValue)"
-                                      }*/
-                                      
-                                      let imurl = eachOne["volumeInfo"]["imageLinks"]["thumbnail"].stringValue
-                                      let url = eachOne["volumeInfo"]["previewLink"].stringValue
-                                      let description = eachOne["volumeInfo"]["description"].stringValue
-                                      
-                                      let bookDetails = Books(id: id, title:  title,authors: author, imurl: imurl, url: url, desc: description )
-                                      bookDetails.id = id
-                                      bookDetails.title = title
-                                      bookDetails.authors = author
-                                      bookDetails.imurl = imurl
-                                      bookDetails.url = url
-                                      bookDetails.desc = description
-                                      
-                                      arr.append(bookDetails)
-                                      
-                                    
-                                      
-                                  }
-                                  
-                                  seal.fulfill(arr)
-                              }
-                              else {
-                                  seal.reject(response.error!)
-                              }
-                          }// end of AF request
-                      }//End of Promise return
-                  }// End of function
-          
-          */
-         
-
-
-    
 
 }

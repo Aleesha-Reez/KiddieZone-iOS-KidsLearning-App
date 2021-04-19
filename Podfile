@@ -18,6 +18,8 @@ target 'KiddieZone' do
   pod 'SwiftSpinner'
   pod 'KeychainSwift', '~> 19.0'
   pod 'youtube-ios-player-helper'
+  # use_modular_headers!
+  pod 'SDWebImage', :modular_headers => true
 
   target 'KiddieZoneTests' do
     inherit! :search_paths

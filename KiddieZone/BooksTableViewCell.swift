@@ -21,5 +21,7 @@ class BooksTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    
 
 }

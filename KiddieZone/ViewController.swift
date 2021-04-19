@@ -8,10 +8,12 @@
 import UIKit
 import Firebase
 import SwiftSpinner
+import AVFoundation
 
 class ViewController: UIViewController {
 
-
+    var player:AVAudioPlayer = AVAudioPlayer()
+    
     @IBOutlet weak var userEmailTxt: UITextField!
     
     @IBOutlet weak var userPasswordTxt: UITextField!
@@ -19,9 +21,31 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblEmailPasswordStatus: UILabel!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        do
+        {
+            let audioPath = Bundle.main.path(forResource: "backgroundMusic", ofType: "wav")
+            try player = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
+        }
+        catch
+        {
+            //PROCESS ERROR
+        }
+        
+        let session = AVAudioSession.sharedInstance()
+        
+        do
+        {
+            try session.setCategory(AVAudioSession.Category.playback)
+        }
+        catch
+        {
+            
+        }
+        
+        player.play()
     }
 
     override func viewDidAppear(_ animated: Bool) {

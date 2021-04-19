@@ -45,7 +45,7 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
    
     let videoId = [ "PKgvOcjJJjA", "glkQwKA5_PU", "IEF8_q5yDYc", "1VBW6rdvRks"]
     var index :Int = 0
- //   let cities = [ "Seattle", "Portland", "SFO", "LA", "New York", "Chicago"]
+ 
     @IBOutlet weak var videosTblView: UITableView!
    
     
@@ -55,16 +55,12 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
      
         self.videosTblView.delegate = self
         self.videosTblView.dataSource = self
-        //playSound(soundName: videoId[index] as! String)
+        
     }
     
-   /* fun getVideo(videCode: String)
-    {
-        let urll = "https://www.youtube.com/embed/\(videoId)"
-    }*/
+  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return videoId.count
-       // return cities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,11 +68,12 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
      //   cell.playerView.load(withVideoId: "PKgvOcjJJjA")
         
         let cell = Bundle.main.loadNibNamed("VideosTableViewCell", owner: self, options: nil)?.first as! VideosTableViewCell
-        let urll = "https://www.youtube.com/embed/\(videoId)"
-        let videourl = NSURL(string: urll)
-        print(videourl)
-        let requestObj = URLRequest(url: videourl! as URL)
+        /*let row = indexPath.row
+        print(videoId[indexPath.row])*/
         
+        let urll = "https://www.youtube.com/embed/\(videoId[indexPath.row])"
+        let videourl = NSURL(string: urll)
+        let requestObj = URLRequest(url: videourl! as URL)
         cell.webView.load(requestObj)
         return cell
     }

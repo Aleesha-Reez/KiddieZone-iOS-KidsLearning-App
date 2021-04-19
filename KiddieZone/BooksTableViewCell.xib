@@ -48,7 +48,7 @@
                 <outlet property="lblAuthor" destination="pzA-He-T3Z" id="nkb-1u-8aP"/>
                 <outlet property="lblTitle" destination="rAy-2e-O5N" id="Xbh-bj-qA8"/>
             </connections>
-            <point key="canvasLocation" x="112.31884057971016" y="80.022321428571431"/>
+            <point key="canvasLocation" x="97.826086956521749" y="76.674107142857139"/>
         </tableViewCell>
     </objects>
     <resources>

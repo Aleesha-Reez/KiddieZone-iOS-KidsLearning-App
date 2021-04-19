@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D48A1F3262D544500A4E926 /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48A1F2262D544500A4E926 /* BooksTableViewController.swift */; };
+		0D48A1F5262D56C200A4E926 /* ReadBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48A1F4262D56C200A4E926 /* ReadBooksViewController.swift */; };
+		0D48A1F7262D8DE200A4E926 /* backgroundMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0D48A1F6262D8DE200A4E926 /* backgroundMusic.wav */; };
+		0D48A1FB262D931B00A4E926 /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D48A1FA262D931B00A4E926 /* song.mp3 */; };
 		0D62FA8626265F8300F678B8 /* R.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0D62FA6A26265F8000F678B8 /* R.wav */; };
 		0D62FA8726265F8300F678B8 /* J.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0D62FA6B26265F8100F678B8 /* J.wav */; };
 		0D62FA8826265F8300F678B8 /* Y.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0D62FA6C26265F8100F678B8 /* Y.wav */; };
@@ -89,6 +93,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D48A1F2262D544500A4E926 /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
+		0D48A1F4262D56C200A4E926 /* ReadBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBooksViewController.swift; sourceTree = "<group>"; };
+		0D48A1F6262D8DE200A4E926 /* backgroundMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = backgroundMusic.wav; path = ../../../backgroundMusic.wav; sourceTree = "<group>"; };
+		0D48A1F8262D915100A4E926 /* backgroundMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = backgroundMusic.wav; sourceTree = "<group>"; };
+		0D48A1F9262D915400A4E926 /* backgroundMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = backgroundMusic.wav; path = ../../../../backgroundMusic.wav; sourceTree = "<group>"; };
+		0D48A1FA262D931B00A4E926 /* song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = song.mp3; path = ../../../../../Downloads/backgroundFun/backgroundFun/song.mp3; sourceTree = "<group>"; };
 		0D62FA6A26265F8000F678B8 /* R.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = R.wav; sourceTree = "<group>"; };
 		0D62FA6B26265F8100F678B8 /* J.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = J.wav; sourceTree = "<group>"; };
 		0D62FA6C26265F8100F678B8 /* Y.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Y.wav; sourceTree = "<group>"; };
@@ -194,6 +204,7 @@
 		0D62FA6526265E1F00F678B8 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				0D48A1F8262D915100A4E926 /* backgroundMusic.wav */,
 				0D62FA7E26265F8200F678B8 /* A.wav */,
 				0D62FA8126265F8300F678B8 /* B.wav */,
 				0D62FA7926265F8200F678B8 /* C.wav */,
@@ -219,11 +230,13 @@
 				0D62FA6E26265F8100F678B8 /* N.wav */,
 				0D62FA7526265F8200F678B8 /* O.wav */,
 				0D62FA7226265F8100F678B8 /* P.wav */,
+				0D48A1FA262D931B00A4E926 /* song.mp3 */,
 				0D62FA6D26265F8100F678B8 /* Q.wav */,
 				0D62FA6A26265F8000F678B8 /* R.wav */,
 				0D62FA7326265F8100F678B8 /* S.wav */,
 				0D62FA7626265F8200F678B8 /* T.wav */,
 				0D62FA8226265F8300F678B8 /* U.wav */,
+				0D48A1F9262D915400A4E926 /* backgroundMusic.wav */,
 				0D62FA8026265F8300F678B8 /* V.wav */,
 				0D62FA7F26265F8300F678B8 /* W.wav */,
 				0D62FA8326265F8300F678B8 /* X.wav */,
@@ -264,6 +277,7 @@
 				0DD720F02622620D00466452 /* Utilities */,
 				0DD720BC2620D7CF00466452 /* AppDelegate.swift */,
 				0DD720BE2620D7CF00466452 /* SceneDelegate.swift */,
+				0D48A1F6262D8DE200A4E926 /* backgroundMusic.wav */,
 				0DD720C02620D7CF00466452 /* ViewController.swift */,
 				0DD720C22620D7CF00466452 /* Main.storyboard */,
 				0DD720C52620D7DB00466452 /* Assets.xcassets */,
@@ -281,6 +295,8 @@
 				0D62FAB8262696F200F678B8 /* VideosTableViewCell.swift */,
 				0D62FAB9262696F200F678B8 /* VideosTableViewCell.xib */,
 				0D62FAC02627CBDE00F678B8 /* videoTableDataClass.swift */,
+				0D48A1F2262D544500A4E926 /* BooksTableViewController.swift */,
+				0D48A1F4262D56C200A4E926 /* ReadBooksViewController.swift */,
 			);
 			path = KiddieZone;
 			sourceTree = "<group>";
@@ -472,11 +488,13 @@
 				0D62FA8626265F8300F678B8 /* R.wav in Resources */,
 				0D62FA8E26265F8300F678B8 /* P.wav in Resources */,
 				0D62FA9726265F8300F678B8 /* E.wav in Resources */,
+				0D48A1FB262D931B00A4E926 /* song.mp3 in Resources */,
 				0D62FAB526268F2300F678B8 /* 6.wav in Resources */,
 				0DD720C42620D7CF00466452 /* Main.storyboard in Resources */,
 				0D62FAB326268F2300F678B8 /* 9.wav in Resources */,
 				0D62FA9D26265F8300F678B8 /* B.wav in Resources */,
 				0D62FA9F26265F8300F678B8 /* X.wav in Resources */,
+				0D48A1F7262D8DE200A4E926 /* backgroundMusic.wav in Resources */,
 				0D62FAB026268F2300F678B8 /* 2.wav in Resources */,
 				0D62FAB226268F2300F678B8 /* 1.wav in Resources */,
 				0D62FA9C26265F8300F678B8 /* V.wav in Resources */,
@@ -626,6 +644,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DD720C12620D7CF00466452 /* ViewController.swift in Sources */,
+				0D48A1F5262D56C200A4E926 /* ReadBooksViewController.swift in Sources */,
 				0D62FAC12627CBDF00F678B8 /* videoTableDataClass.swift in Sources */,
 				0DD720F22622622C00466452 /* KeyChainService.swift in Sources */,
 				0DD721102624591B00466452 /* LettersViewController.swift in Sources */,
@@ -636,6 +655,7 @@
 				0D62FAB72626963000F678B8 /* VideosViewController.swift in Sources */,
 				0DD720FC262418DC00466452 /* Books.swift in Sources */,
 				0DD721082624352500466452 /* Constants.swift in Sources */,
+				0D48A1F3262D544500A4E926 /* BooksTableViewController.swift in Sources */,
 				0DD720BF2620D7CF00466452 /* SceneDelegate.swift in Sources */,
 				0DD720F626226AE400466452 /* HomeViewController.swift in Sources */,
 				0D62FAA326268A8200F678B8 /* NumbersViewController.swift in Sources */,
