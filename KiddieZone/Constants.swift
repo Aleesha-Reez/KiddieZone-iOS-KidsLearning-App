@@ -6,4 +6,4 @@
 //
 
 import Foundation
-let apiURL = "https://www.googleapis.com/books/v1/volumes?q=kids+books"
+let apiURL = "https://www.googleapis.com/books/v1/volumes?q=harry+potter"

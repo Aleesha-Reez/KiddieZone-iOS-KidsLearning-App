@@ -34,6 +34,7 @@ class LettersViewController: UIViewController {
         
         lettersImgOutlet.image = UIImage(named: lettersArr[index] as! String)
         playSound(soundName: lettersArr[index] as! String)
+        //self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
     }
     
 

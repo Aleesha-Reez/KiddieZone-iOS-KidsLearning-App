@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     @IBAction func logoutAction(_ sender: Any) {
         do {
             try Auth.auth().signOut()
-            keyChainService().keyChain.delete("uid")
+           // keyChainService().keyChain.delete("uid")
             self.navigationController?.popViewController(animated: true)
         }
         catch{
@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        do{
+       /* do{
             audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "backgroundMusic",ofType: "wav")!))
             audioPlayer.prepareToPlay()
             let audioSession = AVAudioSession.sharedInstance()
@@ -47,7 +47,8 @@ class HomeViewController: UIViewController {
         }
         catch{
             print(error)
-        }
+        }*/
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         
     }
     
