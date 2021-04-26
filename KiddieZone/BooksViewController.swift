@@ -21,15 +21,18 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
   
     
     @IBOutlet weak var tblView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tblView.delegate = self
         self.tblView.dataSource = self
-
-    }
+            }
     
   
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+      //  self.navigationItem.setHidesBackButton(true, animated: true)
+       
           getData();
       }
 
@@ -50,7 +53,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
        
       
         cell.lblTitle.text = "\(booksArr[indexPath.row].title) "
-        cell.lblAuthor.text = "\(booksArr[indexPath.row].authors) "
+       // cell.lblAuthor.text = "\(booksArr[indexPath.row].authors) "
         
         print(booksArr[indexPath.row].imurl)
         cell.booksImage.sd_setImage(with: URL(string: booksArr[indexPath.row].imurl), placeholderImage:UIImage(named:"Login"))

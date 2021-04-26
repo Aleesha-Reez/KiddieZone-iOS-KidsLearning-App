@@ -16,6 +16,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImg" translatesAutoresizingMaskIntoConstraints="NO" id="PnB-rM-cGs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    </imageView>
                     <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4j-tT-WfZ">
                         <rect key="frame" x="10" y="10" width="300" height="24"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -30,7 +33,11 @@
                     <constraint firstAttribute="bottom" secondItem="h4j-tT-WfZ" secondAttribute="bottom" constant="10" id="2Fe-D8-jb9"/>
                     <constraint firstAttribute="trailing" secondItem="h4j-tT-WfZ" secondAttribute="trailing" constant="10" id="F3C-oh-nr4"/>
                     <constraint firstItem="h4j-tT-WfZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="T8U-aq-SXO"/>
+                    <constraint firstItem="PnB-rM-cGs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="UFZ-o5-WW4"/>
+                    <constraint firstItem="PnB-rM-cGs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WXV-G7-OjF"/>
+                    <constraint firstAttribute="trailing" secondItem="PnB-rM-cGs" secondAttribute="trailing" id="koX-2H-3dS"/>
                     <constraint firstItem="h4j-tT-WfZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="pRT-1B-05U"/>
+                    <constraint firstAttribute="bottom" secondItem="PnB-rM-cGs" secondAttribute="bottom" id="uw2-U4-Med"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -40,4 +47,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="75"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="BackgroundImg" width="200" height="300"/>
+    </resources>
 </document>

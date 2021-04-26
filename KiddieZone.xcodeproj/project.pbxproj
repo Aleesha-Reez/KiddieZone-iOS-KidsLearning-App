@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D3E258F26302A5A00C58DBD /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E258E26302A5A00C58DBD /* Constant.swift */; };
+		0D3E25AF26353E2600C58DBD /* Topics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3E25AE26353E2600C58DBD /* Topics.swift */; };
+		0D42BE1C2635EF5E00CB41B1 /* TopicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D42BE1B2635EF5E00CB41B1 /* TopicCollectionViewCell.swift */; };
+		0D42BE1E2635F3EF00CB41B1 /* HomeCVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D42BE1D2635F3EF00CB41B1 /* HomeCVViewController.swift */; };
 		0D48A1F3262D544500A4E926 /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48A1F2262D544500A4E926 /* BooksTableViewController.swift */; };
 		0D48A1F5262D56C200A4E926 /* ReadBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48A1F4262D56C200A4E926 /* ReadBooksViewController.swift */; };
 		0D48A1FB262D931B00A4E926 /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D48A1FA262D931B00A4E926 /* song.mp3 */; };
@@ -97,6 +100,9 @@
 
 /* Begin PBXFileReference section */
 		0D3E258E26302A5A00C58DBD /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		0D3E25AE26353E2600C58DBD /* Topics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topics.swift; sourceTree = "<group>"; };
+		0D42BE1B2635EF5E00CB41B1 /* TopicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCollectionViewCell.swift; sourceTree = "<group>"; };
+		0D42BE1D2635F3EF00CB41B1 /* HomeCVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCVViewController.swift; sourceTree = "<group>"; };
 		0D48A1F2262D544500A4E926 /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
 		0D48A1F4262D56C200A4E926 /* ReadBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBooksViewController.swift; sourceTree = "<group>"; };
 		0D48A1F8262D915100A4E926 /* backgroundMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = backgroundMusic.wav; sourceTree = "<group>"; };
@@ -314,6 +320,9 @@
 				0D48A1F2262D544500A4E926 /* BooksTableViewController.swift */,
 				0D48A1F4262D56C200A4E926 /* ReadBooksViewController.swift */,
 				0D48A202262FF75A00A4E926 /* SignUpViewController.swift */,
+				0D3E25AE26353E2600C58DBD /* Topics.swift */,
+				0D42BE1B2635EF5E00CB41B1 /* TopicCollectionViewCell.swift */,
+				0D42BE1D2635F3EF00CB41B1 /* HomeCVViewController.swift */,
 			);
 			path = KiddieZone;
 			sourceTree = "<group>";
@@ -665,12 +674,15 @@
 				0D62FAC12627CBDF00F678B8 /* videoTableDataClass.swift in Sources */,
 				0DD720F22622622C00466452 /* KeyChainService.swift in Sources */,
 				0DD721102624591B00466452 /* LettersViewController.swift in Sources */,
+				0D3E25AF26353E2600C58DBD /* Topics.swift in Sources */,
+				0D42BE1E2635F3EF00CB41B1 /* HomeCVViewController.swift in Sources */,
 				0D48A203262FF75A00A4E926 /* SignUpViewController.swift in Sources */,
 				0D48A206262FFFF700A4E926 /* Utilities.swift in Sources */,
 				0DD720BD2620D7CF00466452 /* AppDelegate.swift in Sources */,
 				0D3E258F26302A5A00C58DBD /* Constant.swift in Sources */,
 				0DD7210B2624374900466452 /* BooksTableViewCell.swift in Sources */,
 				0D62FABA262696F200F678B8 /* VideosTableViewCell.swift in Sources */,
+				0D42BE1C2635EF5E00CB41B1 /* TopicCollectionViewCell.swift in Sources */,
 				0D80903B262569C300BDBB7E /* BooksViewController.swift in Sources */,
 				0D62FAB72626963000F678B8 /* VideosViewController.swift in Sources */,
 				0DD720FC262418DC00466452 /* Books.swift in Sources */,

@@ -10,13 +10,15 @@ import AVFoundation
 
 class NumbersViewController: UIViewController {
 
-    
+   
     @IBOutlet weak var numbersImgOutlet: UIImageView!
+  
     @IBOutlet weak var backBtn: UIButton!
     
+    @IBOutlet weak var audioBtn: UIButton!
+   
     @IBOutlet weak var nextBtn: UIButton!
     
-    @IBOutlet weak var audioBtn: UIButton!
     
     var numArr = NSMutableArray()
     var audioPlayer : AVAudioPlayer!
@@ -46,28 +48,16 @@ class NumbersViewController: UIViewController {
             print("Error getting audio file")
         }
         
-       /* let pathToSound = Bundle.main.path(forResource: soundName, ofType: "wav")
-        let url = URL(fileURLWithPath: pathToSound)
-        guard let url = Bundle.main.url(forResource: soundName, withExtension: "wav") else { return }
-        
-            do {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-                try AVAudioSession.sharedInstance().setActive(true)
-                audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
-                guard let audioPlayer = audioPlayer else { return }
-
-                audioPlayer.play()
-            }catch let error{
-                print(error.localizedDescription)
-            }*/
     }
+    
+    
     
     @IBAction func backBtnAction(_ sender: Any) {
         if index >= 0
         {
             if index == 0
             {
-                let alert = UIAlertController(title: "Alert", message: "You are now at the beginning of the letters", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "Alert", message: "You have reached at the beginning", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
@@ -82,13 +72,12 @@ class NumbersViewController: UIViewController {
         playSound(soundName: numArr[index] as! String)
     }
     
-   
     @IBAction func nextBtnAction(_ sender: Any) {
         if index < numArr.count
         {
             if index == numArr.count - 1
             {
-                let alert = UIAlertController(title: "Alert", message: "You have reached the last letter", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "Alert", message: "You have reached at the end", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
@@ -98,5 +87,5 @@ class NumbersViewController: UIViewController {
             }
         }
     }
-    
+   
 }

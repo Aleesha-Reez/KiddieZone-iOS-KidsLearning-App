@@ -30,7 +30,6 @@ class BooksTableViewController: UITableViewController {
     // MARK: - Table view data source
 
    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -39,25 +38,20 @@ class BooksTableViewController: UITableViewController {
       }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0;//Choose your custom row height
+        return 80.0;
     }
     
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return  booksArr.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("BooksTableViewCell", owner: self, options: nil)?.first as! BooksTableViewCell
-         
-          // print(booksArr[indexPath.row].id)
           cell.lblTitle?.text = "\(booksArr[indexPath.row].title) "
           cell.lblAuthor.text = "\(booksArr[indexPath.row].authors) "
-         // cell.booksImage.image =  UIImage(
-          // cell.booksImage.image = UIImage(named :maxIcon)
           return cell
     }
     
@@ -82,8 +76,6 @@ class BooksTableViewController: UITableViewController {
                                let items = res["items"]?.array;
 
                                if items!.count == 0 { return }
-
-                              // self.booksArr = [Books]()
 
                                for eachOne in items! {
 
@@ -125,16 +117,7 @@ class BooksTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /*if segue.identifier == "showLinks" {
-                    if let indexPath = tableView.indexPathForSelectedRow {
-                        print("hello")
-                        print(indexPath)
-                        let destination = segue.destination as? ReadBooksViewController
-                        print(destination)
-                        destination?.links = links[indexPath.row]
-                    }
-                }*/
-        
+      
         if segue.identifier == "showLinks" {
                     if let indexPath = tblView.indexPathForSelectedRow {
                         let destination = segue.destination as? ReadBooksViewController

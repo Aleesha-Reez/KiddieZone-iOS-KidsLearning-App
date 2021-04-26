@@ -36,7 +36,7 @@ class SignUpViewController: UIViewController {
         // Hide the error label
         errorLabel.alpha = 0
     
-        // Style the elements
+      
         Utilities.styleTextField(firstNameTextField)
         Utilities.styleTextField(lastNameTextField)
         Utilities.styleTextField(emailTextField)
@@ -127,10 +127,16 @@ class SignUpViewController: UIViewController {
     
     func transitionToHome() {
         
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constant.Storyboard.homeViewController) as? HomeViewController
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constant.Storyboard.HomeCVViewController) as? HomeCVViewController
+        
+        self.navigationController?.pushViewController(homeViewController!, animated: true)
+        view.window?.makeKeyAndVisible()
+        
+      /*  let homeViewController = storyboard?.instantiateViewController(identifier: Constant.Storyboard.HomeCVViewController) as? HomeCVViewController
         
         view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
+        view.window?.makeKeyAndVisible()*/
+        
         
     }
     
