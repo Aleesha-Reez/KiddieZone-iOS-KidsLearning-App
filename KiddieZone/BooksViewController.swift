@@ -53,8 +53,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
        
       
         cell.lblTitle.text = "\(booksArr[indexPath.row].title) "
-       // cell.lblAuthor.text = "\(booksArr[indexPath.row].authors) "
-        
+    
         print(booksArr[indexPath.row].imurl)
         cell.booksImage.sd_setImage(with: URL(string: booksArr[indexPath.row].imurl), placeholderImage:UIImage(named:"Login"))
        
@@ -75,8 +74,90 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                   let url = apiURL
                   return url
        }
+    
+    func getData()
+        {
+                  let url = getUrl()
+                    
+                  getBookData(url: url)
+                        .done { (response) in
+                            print(response)
+                            self.booksArr = [Books]()
+                            for data in response {
+                                
+                                self.booksArr.append(data)
+                            }
+                           
+                            self.tblView.reloadData()
+                        }
+                        .catch { (error) in
+                            print("Error in getting all the values \(error)")
+                        }
+                        
+            }
+            
+        func getBookData(url : String) -> Promise<[Books]>{
+                    
+                    return Promise<[Books]> { seal -> Void in
+                        
+                      
+                        AF.request(url).responseJSON { response in
+                                  
+                               if response.error == nil {
+                                      
+                                   var arr  = [Books]()
+                                   guard let data = response.data else { return seal.fulfill( arr )  }
+                                  
+                                   guard let res = JSON(data).dictionary else { return  seal.fulfill( arr ) }
+                                  
+                                   let items = res["items"]?.array;
+
+                                   if items!.count == 0 { return }
+
+                                   for eachOne in items! {
+
+                                       
+                                       let id = eachOne["id"].stringValue
+                                      
+                                       let title = eachOne["volumeInfo"]["title"].stringValue
+
+                                       let authors = eachOne["volumeInfo"]["authors"].array!
+                                       
+                                       var author = ""
+                                       
+                                       for j in authors{
+                                           
+                                           author += "\(j.stringValue)"
+                                       }
+                                       
+                                       let imurl = eachOne["volumeInfo"]["imageLinks"]["thumbnail"].stringValue
+                                       let url = eachOne["volumeInfo"]["previewLink"].stringValue
+                                       let description = eachOne["volumeInfo"]["description"].stringValue
+
+                                    
+                                    let bookDetails = Books(id: id, title:  title,authors: author, imurl: imurl, url: url, desc: description)
+                                                                   
+                                    bookDetails.id = id
+                                    bookDetails.title = title
+                                    bookDetails.authors = author
+                                    bookDetails.imurl = imurl
+                                    bookDetails.url = url
+                                    bookDetails.desc = description
+                                    arr.append(bookDetails)
+                               
+                                }
+                                
+                                seal.fulfill(arr)
+                            }
+                            else {
+                                seal.reject(response.error!)
+                            }
+                        }// end of AF request
+                    }//End of Promise return
+                }// End of function
+                
           
-       func getData()
+      /* func getData()
        {
                     let url = getUrl()
           
@@ -126,6 +207,6 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                            }
                               
                        }
-                   }
+                   }*/
 
 }

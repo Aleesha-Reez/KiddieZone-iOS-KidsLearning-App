@@ -12,9 +12,7 @@ struct Constant {
         
         static let ViewController = "MainVC"
         static let SignUpViewController = "SignUpVC"
-      //  static let HomeViewController = "HomeVC"
         static let HomeCVViewController = "HomeCV1"
-      //  static let HomeCollectionViewController = "HomeCollectionVC"
         static let LettersViewController = "LettersVC"
         static let NumbersViewController = "NumbersVC"
         static let BooksViewController = "BooksVC"

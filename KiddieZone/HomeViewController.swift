@@ -12,8 +12,8 @@ import AVFoundation
 
 class HomeViewController: UIViewController {
 
-    var audioPlayer = AVAudioPlayer()
-    
+  
+    var player:AVAudioPlayer = AVAudioPlayer()
     @IBOutlet weak var lettersBtnOutlet: UIButton!
     
     
@@ -37,21 +37,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       /* do{
-            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "backgroundMusic",ofType: "wav")!))
-            audioPlayer.prepareToPlay()
-            let audioSession = AVAudioSession.sharedInstance()
-            do{
-                try audioSession.setCategory(AVAudioSession.Category.playback)
-            }
-            catch{
-                
-            }
-        }
-        catch{
-            print(error)
-        }*/
-        //self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+       
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: navigationController, action: nil)
             navigationItem.leftBarButtonItem = backButton
         
